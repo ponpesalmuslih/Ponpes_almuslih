@@ -6,104 +6,19 @@
 <title>PSB Al-Muslih</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <style>
-body{
-  font-family:'Poppins',sans-serif;
-  margin:0;
-  background:#eef2f7;
-}
-header{
-  background:linear-gradient(135deg,#0b5ed7,#084298);
-  color:#fff;
-  text-align:center;
-  padding:30px;
-}
-section{
-  padding:20px;
-  max-width:900px;
-  margin:auto;
-}
-.card{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
-}
-input,textarea,select{
-  width:100%;
-  padding:10px;
-  margin:6px 0;
-  border-radius:6px;
-  border:1px solid #ddd;
-}
-button{
-  background:#0b5ed7;
-  color:#fff;
-  padding:10px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-/* KARTU VIP */
-.kartu-wrap{
-  display:none;
-  text-align:center;
-  margin-top:20px;
-}
-.kartu{
-  width:360px;
-  margin:auto;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 15px 30px rgba(0,0,0,.2);
-  background:#fff;
-  position:relative;
-}
-.kartu-header{
-  background:linear-gradient(135deg,#0b5ed7,#084298);
-  color:#fff;
-  padding:15px;
-  text-align:center;
-}
-.kartu-header h3{
-  margin:0;
-  font-size:16px;
-}
-.foto{
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #fff;
-  position:absolute;
-  top:60px;
-  left:50%;
-  transform:translateX(-50%);
-}
-.kartu-body{
-  padding:60px 15px 15px;
-  text-align:left;
-}
-.kartu-body p{
-  margin:6px 0;
-  font-size:14px;
-}
-.qr{
-  margin-top:10px;
-  text-align:center;
-}
-.kartu-footer{
-  background:#f1f3f5;
-  padding:10px;
-  font-size:12px;
-  text-align:center;
-}
-.btn{
-  margin-top:10px;
-}
+body{font-family:'Poppins',sans-serif;margin:0;background:#eef2f7;}
+header{background:#0b5ed7;color:#fff;text-align:center;padding:25px;}
+section{max-width:900px;margin:auto;padding:20px;}
+.card{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px;}
+input,select{width:100%;padding:10px;margin:6px 0;border-radius:6px;border:1px solid #ddd;}
+button{background:#0b5ed7;color:#fff;padding:12px;border:none;border-radius:6px;width:100%;}
+.kartu-wrap{display:none;text-align:center;}
+.kartu{width:350px;margin:auto;border-radius:15px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.2);}
+.kartu-header{background:#0b5ed7;color:#fff;padding:10px;}
+.kartu-body{padding:15px;text-align:left;}
+.foto{width:80px;height:80px;border-radius:50%;object-fit:cover;display:block;margin:auto;}
 </style>
 </head>
 
@@ -117,93 +32,105 @@ button{
 <section>
 
 <div class="card">
-<h2>Formulir Pendaftaran</h2>
-
+<h2>Formulir</h2>
 <form onsubmit="kirim(event)">
 <input id="nama" placeholder="Nama Lengkap" required>
 <input id="ttl" placeholder="Tempat, Tanggal Lahir" required>
-<input id="hp" placeholder="No WhatsApp">
 
-<select id="program">
-<option>Reguler</option>
-<option>Tahfidz</option>
+<select id="jk">
+<option>Laki-laki</option>
+<option>Perempuan</option>
 </select>
 
-<label>Upload Foto</label>
+<select id="program">
+<option>SMP</option>
+<option>MA</option>
+</select>
+
+<input id="hp" placeholder="No WhatsApp" required>
+
 <input type="file" id="foto" accept="image/*" required>
 
 <button type="submit">Daftar</button>
 </form>
 </div>
 
-<!-- KARTU -->
-<div class="kartu-wrap" id="kartuWrap">
-
-<div class="kartu">
-  <div class="kartu-header">
-    <h3>KARTU SANTRI</h3>
-    <small>Al-Muslih</small>
-  </div>
-
-  <img id="fotoPreview" class="foto">
-
-  <div class="kartu-body">
-    <p id="kNama"></p>
-    <p id="kProgram"></p>
-    <p id="kNo"></p>
-
-    <div class="qr" id="qr"></div>
-  </div>
-
-  <div class="kartu-footer">
-    Simpan kartu ini sebagai bukti pendaftaran
-  </div>
+<div class="card">
+<h2>Program Unggulan</h2>
+<ul>
+<li>Al-Qur'an</li>
+<li>Kitab Kuning</li>
+<li>Bahasa Arab & Inggris</li>
+<li>Pidato 3 Bahasa</li>
+<li>Public Speaking</li>
+<li>Desain Grafis</li>
+<li>Pramuka</li>
+</ul>
 </div>
 
-<button class="btn" onclick="window.print()">Print / Save</button>
+<div class="card">
+<h2>Sekretariat</h2>
+<p>Kp. Munjul RT/RW 001/007 Desa Sukamaju<br>Kec. Cianjur Kab. Cianjur Jawa Barat</p>
+</div>
 
+<div class="kartu-wrap" id="kartuWrap">
+<div class="kartu">
+<div class="kartu-header">
+<h3>KARTU SANTRI</h3>
+</div>
+
+<img id="fotoPreview" class="foto">
+
+<div class="kartu-body">
+<p id="kNama"></p>
+<p id="kTTL"></p>
+<p id="kJK"></p>
+<p id="kProgram"></p>
+<p id="kHP"></p>
+<p id="kNo"></p>
+</div>
+</div>
+
+<br>
+<button onclick="window.print()">Cetak / Save PDF</button>
 </div>
 
 </section>
 
 <script>
 function kirim(e){
-  e.preventDefault();
+e.preventDefault();
 
-  let no = "ALM-" + Date.now();
+let no = "ALM-" + Date.now();
 
-  // tampilkan kartu
-  document.getElementById('kartuWrap').style.display = 'block';
+// tampilkan kartu
+kartuWrap.style.display="block";
 
-  document.getElementById('kNama').innerText = "Nama: " + nama.value;
-  document.getElementById('kProgram').innerText = "Program: " + program.value;
-  document.getElementById('kNo').innerText = "No: " + no;
+kNama.innerText="Nama: "+nama.value;
+kTTL.innerText="TTL: "+ttl.value;
+kJK.innerText="JK: "+jk.value;
+kProgram.innerText="Program: "+program.value;
+kHP.innerText="WA: "+hp.value;
+kNo.innerText="No: "+no;
 
-  // tampilkan foto
-  let file = document.getElementById('foto').files[0];
-  let reader = new FileReader();
+// tampilkan foto
+let file = foto.files[0];
+let reader = new FileReader();
+reader.onload=function(){fotoPreview.src=reader.result;}
+reader.readAsDataURL(file);
 
-  reader.onload = function(){
-    document.getElementById('fotoPreview').src = reader.result;
-  }
-  reader.readAsDataURL(file);
+// 🔥 WA OTOMATIS KE PANITIA
+let pesan = `Assalamu'alaikum, saya telah mendaftar santri baru.
 
-  // QR Code
-  document.getElementById('qr').innerHTML = "";
-  new QRCode(document.getElementById('qr'), {
-    text: no,
-    width: 80,
-    height: 80
-  });
-
-  // WhatsApp otomatis
-  let pesan = `Assalamu'alaikum, saya telah mendaftar.
 Nama: ${nama.value}
-No: ${no}`;
+TTL: ${ttl.value}
+Program: ${program.value}
+No WA: ${hp.value}
+No Pendaftaran: ${no}`;
 
-  window.open(`https://wa.me/62895415780303?text=${encodeURIComponent(pesan)}`,'_blank');
+window.open(`https://wa.me/62895415780303?text=${encodeURIComponent(pesan)}`,'_blank');
 }
 </script>
 
 </body>
-  </html>
+</html>
